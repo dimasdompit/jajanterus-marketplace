@@ -26,7 +26,7 @@ export default defineNuxtConfig({
       link: [
         { rel: "icon", type: 'image/x-icon', href: '/favicon.ico' },
         { rel: "apple-touch-icon", href: '/favicon.ico' },
-        { rel: "canonical", href: process.env.FRONTEND_URL + "/" },
+        { rel: "canonical", href: `${process.env.NUXT_FRONTEND_URL}/` },
       ]
     }
   },
