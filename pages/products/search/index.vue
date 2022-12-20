@@ -30,6 +30,8 @@
 </template>
 
 <script setup>
+import { useCartsStore  } from '~/stores/carts'
+
 const route = useRoute();
 const keyword = route.query.q;
 
