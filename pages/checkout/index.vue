@@ -171,6 +171,7 @@ import { useTransactionStore } from '~/stores/transaction'
 
 const config = useRuntimeConfig();
 const route = useRoute();
+const router = useRouter();
 const {
   couponError,
   couponSuccess,
