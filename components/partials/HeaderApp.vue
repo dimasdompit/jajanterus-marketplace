@@ -1,5 +1,5 @@
 <template>
-  <header id="header-app" class="bg-white flex w-full absolute top-0 left-0 items-center z-40" :class="{'overflow-hidden': !activeMenu}">
+  <header id="header-app" class="bg-white flex w-full absolute top-0 left-0 items-center z-30">
     <div class="container">
       <div class="flex items-center justify-between relative">
         <div>
@@ -17,7 +17,7 @@
         </div>
         
         <transition>
-          <nav id="nav-menu" class="absolute py-4 w-full top-full bg-white border transition-all duration-500 ease-in-out lg:right-4 lg:static lg:flex lg:justify-end lg:border-none lg:top-0 lg:bg-transparent z-10" :class="[activeMenu ? 'right-0' : '-right-[130%]']">
+          <nav id="nav-menu" class="absolute py-4 w-full top-full bg-white border transition-all duration-500 ease-in-out lg:right-4 lg:static lg:flex lg:justify-end lg:border-none lg:top-0 lg:bg-transparent z-20 lg:opacity-100" :class="[activeMenu ? 'top-full opacity-100' : '-top-[150%] opacity-0']">
             <div class="px-4 pt-4 lg:w-full lg:pt-0 relative">
               <input @keyup.enter="searchProduct" type="text" class="bg-gray-100 w-full py-3 px-8 rounded-full text-sm focus:outline-none focus:ring focus:ring-dark/10 focus:border-gray-300" placeholder="Search Product" v-model="keyword">
               <img src="~/assets/icons/icon-search.svg" alt="Search Icon" class="absolute top-4 right-9 bg-gray-100 py-3 px-0 lg:right-9 lg:top-0">

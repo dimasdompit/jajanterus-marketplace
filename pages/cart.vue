@@ -11,7 +11,7 @@
           <div v-if="cartItems?.length" class="relative flex flex-wrap justify-between md:flex-nowrap">
             <div class="w-full h-96 lg:h-[500px] overflow-x-auto">
               <div v-for="(cart, index) in cartItems" :key="index" class="relative overflow-hidden md:mr-2 lg:mr-4">
-                <div class="flex w-full relative z-20 bg-white p-4 border border-gray-200 rounded shadow-sm mb-3" :class="{'-left-20': isActive(cart)}">
+                <div class="flex w-full relative z-20 bg-white p-4 border border-gray-200 rounded shadow-sm mb-3 transition-all duration-300 ease-in-out" :class="[isActive(cart) ? '-left-20' : 'left-0' ]">
                   <div class="w-44 lg:w-52 h-28 lg:h-36 rounded-md overflow-hidden mr-4">
                     <img :src="cart.thumbnail" :alt="cart.title" class="w-full h-full object-contain object-center">
                   </div>

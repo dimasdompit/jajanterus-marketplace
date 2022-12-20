@@ -43,8 +43,11 @@
               <p class="text-xs lg:text-sm font-medium mb-1 text-gray-600">Tax(10%) : ${{ order?.tax }}</p>
               <p class="text-xs lg:text-sm font-medium mb-1 text-gray-600">Coupon Discount : -${{ order?.couponDiscount }}</p>
               <p class="text-xs lg:text-sm font-medium mb-1 text-gray-600">Shipping Cost : -$0</p>
-              <hr class="my-4">
-              <h4 class="text-sm lg:text-base font-semibold text-primary">Total Order : ${{ order?.total }}</h4>
+              <hr class="mt-4 mb-2">
+              <div class="w-full flex flex-wrap items-center justify-between">
+                <h4 class="text-sm lg:text-base font-semibold text-primary my-2">Total Order : ${{ order?.total }}</h4>
+                <p class="text-xs lg:text-sm mb-1">Payment Method : {{ order?.payment }}</p>
+              </div>
             </div>
           </div>
         </div>
