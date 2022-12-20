@@ -1,0 +1,15 @@
+{
+  "paymentsData": [
+    { "image": "logo-bca" },
+    { "image": "logo-mandiri" },
+    { "image": "logo-bni" },
+    { "image": "logo-bri" },
+    { "image": "logo-cimb" },
+    { "image": "logo-permata" },
+    { "image": "logo-alfamart" },
+    { "image": "logo-alfamidi"},
+    { "image": "logo-indomaret" },
+    { "image": "logo-mastercard" },
+    { "image": "logo-visa" }
+  ]
+}

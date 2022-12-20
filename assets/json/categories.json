@@ -1,0 +1,104 @@
+{
+  "categoriesData" : [
+    {
+      "title": "Smartphones",
+      "slug": "smartphones",
+      "icon": "icon-smartphones"
+    },
+    {
+      "title": "Laptops",
+      "slug": "laptops",
+      "icon": "icon-laptops"
+    },
+    {
+      "title": "Fragrances",
+      "slug": "fragrances",
+      "icon": "icon-fragrances"
+    },
+    {
+      "title": "Skincare",
+      "slug": "skincare",
+      "icon": "icon-skincare"
+    },
+    {
+      "title": "Groceries",
+      "slug": "groceries",
+      "icon": "icon-groceries"
+    },
+    {
+      "title": "Home Decoration",
+      "slug": "home-decoration",
+      "icon": "icon-home-decoration"
+    },
+    {
+      "title": "Furniture",
+      "slug": "furniture",
+      "icon": "icon-furniture"
+    },
+    {
+      "title": "Tops",
+      "slug": "tops",
+      "icon": "icon-tops"
+    },
+    {
+      "title": "Womens Dresses",
+      "slug": "womens-dresses",
+      "icon": "icon-womens-dresses"
+    },
+    {
+      "title": "Womens Shoes",
+      "slug": "womens-shoes",
+      "icon": "icon-womens-shoes"
+    },
+    {
+      "title": "Mens Shirts",
+      "slug": "mens-shirts",
+      "icon": "icon-mens-shirts"
+    },
+    {
+      "title": "Mens Shoes",
+      "slug": "mens-shoes",
+      "icon": "icon-mens-shoes"
+    },
+    {
+      "title": "Mens Watches",
+      "slug": "mens-watches",
+      "icon": "icon-mens-watches"
+    },
+    {
+      "title": "Womens Watches",
+      "slug": "womens-watches",
+      "icon": "icon-womens-watches"
+    },
+    {
+      "title": "Womens Bags",
+      "slug": "womens-bags",
+      "icon": "icon-womens-bags"
+    },
+    {
+      "title": "Womens Jewellery",
+      "slug": "womens-jewellery",
+      "icon": "icon-womens-jewellery"
+    },
+    {
+      "title": "Sunglasses",
+      "slug": "sunglasses",
+      "icon": "icon-sunglasses"
+    },
+    {
+      "title": "Automotive",
+      "slug": "automotive",
+      "icon": "icon-automotive"
+    },
+    {
+      "title": "Motorcycle",
+      "slug": "motorcycle",
+      "icon": "icon-motorcycle"
+    },
+    {
+      "title": "Lighting",
+      "slug": "lighting",
+      "icon": "icon-lighting"
+    }
+  ]
+}
