@@ -184,7 +184,7 @@ const addToCart = (product, quantity) => {
 
   $swal.fire({
     icon: 'success',
-    text: 'Add To Success',
+    text: 'Add to cart success',
     timer: 2000,
     showConfirmButton: false,
     allowOutsideClick: false,
