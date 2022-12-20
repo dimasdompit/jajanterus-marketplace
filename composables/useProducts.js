@@ -1,4 +1,6 @@
 export default function useProducts() {
+  const { $apiFetch } = useNuxtApp()
+
   const skip = ref(15);
   const featuredProducts = ref({});
   const topProducts = ref([]);
@@ -18,7 +20,7 @@ export default function useProducts() {
   const getFeaturedProducts = async () => {
     featuredProductsLoading.value = true;
     try {
-      const response = await useNuxtApp().$apiFetch('/products?limit=5')
+      const response = await $apiFetch('/products?limit=5')
 
       featuredProducts.value = response
       featuredProductsLoading.value = false
@@ -31,7 +33,7 @@ export default function useProducts() {
   const getTopProducts = async () => {
     topProductsLoading.value = true;
     try {
-      const response = await useNuxtApp().$apiFetch('/products?limit=10&skip=5')
+      const response = await $apiFetch('/products?limit=10&skip=5')
 
       topProducts.value = response
       topProductsLoading.value = false;
@@ -44,7 +46,7 @@ export default function useProducts() {
   const getAllProducts = async () => {
     allProductsLoading.value = true;
     try {
-      const response = await useNuxtApp().$apiFetch(`/products?limit=12&skip=15`)
+      const response = await $apiFetch(`/products?limit=12&skip=15`)
       allProducts.value = response
       allProductsLoading.value = false;
     } catch (error) {
@@ -56,7 +58,7 @@ export default function useProducts() {
   const getProductCategories = async (slug) => {
     productCategoriesLoading.value = true;
     try {
-      const response = await useNuxtApp().$apiFetch(`/products/category/${slug}`)
+      const response = await $apiFetch(`/products/category/${slug}`)
       productCategories.value = response;
       productCategoriesLoading.value = false;
     } catch (error) {
@@ -68,7 +70,7 @@ export default function useProducts() {
   const getProductDetail = async (id) => {
     productLoading.value = true;
     try {
-      const response = await useNuxtApp().$apiFetch(`/products/${id}`)
+      const response = await $apiFetch(`/products/${id}`)
       product.value = response;
       productLoading.value = false;
     } catch (error) {
@@ -81,7 +83,7 @@ export default function useProducts() {
     moreProductsLoading.value = true;
     try {
       skip.value += 15
-      const response = await useNuxtApp().$apiFetch(`/products?limit=12&skip=${skip.value}`)
+      const response = await $apiFetch(`/products?limit=12&skip=${skip.value}`)
       allProducts.value.products.push(...response.products)
       moreProductsLoading.value = false;
     } catch (error) {
@@ -92,7 +94,7 @@ export default function useProducts() {
   const searchProducts = async (keyword) => {
     searchProductResultLoading.value = true;
     try {
-      const response = await useNuxtApp().$apiFetch(`/products/search?q=${keyword}`)
+      const response = await $apiFetch(`/products/search?q=${keyword}`)
       searchProductResult.value = response;
       searchProductResultLoading.value = false;
     } catch (error) {
