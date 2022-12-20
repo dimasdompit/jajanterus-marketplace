@@ -20,7 +20,6 @@
     "@pinia/nuxt": "^0.4.6",
     "crypto-js": "^4.1.1",
     "sweetalert2": "^11.6.15",
-    "vue-star-rating": "^2.1.0",
     "vue3-carousel": "^0.2.8"
   }
 }

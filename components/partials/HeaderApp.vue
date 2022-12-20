@@ -1,5 +1,5 @@
 <template>
-  <header id="header-app" class="bg-white flex w-full absolute top-0 left-0 items-center z-40">
+  <header id="header-app" class="bg-white flex w-full absolute top-0 left-0 items-center z-40" :class="{'overflow-hidden': !activeMenu}">
     <div class="container">
       <div class="flex items-center justify-between relative">
         <div>
@@ -9,36 +9,38 @@
         </div>
 
         <div class="flex items-center px-4">
-          <button @click="toggleMenu" type="button" class="block absolute right-0 lg:hidden" :class="{'hamburger-active': activeMenu}">
+          <button @click="toggleMenu()" type="button" class="block absolute right-0 lg:hidden" :class="{'hamburger-active': activeMenu}">
             <span class="hamburger-line transition duration-500 ease-in-out origin-top-left"></span>
             <span class="hamburger-line transition duration-500 ease-in-out"></span>
             <span class="hamburger-line transition duration-500 ease-in-out origin-bottom-left"></span>
           </button>
         </div>
         
-        <nav id="nav-menu" class="absolute py-4 w-full top-full bg-white border transition duration-500 lg:right-4 lg:static lg:flex lg:justify-end lg:border-none lg:top-0 lg:bg-transparent z-10" :class="{'hidden': !activeMenu}">
-          <div class="px-4 pt-4 lg:w-full lg:pt-0 relative">
-            <input @keyup.enter="searchProduct" type="text" class="bg-gray-100 w-full py-3 px-8 rounded-full text-sm focus:outline-none focus:ring focus:ring-dark/10 focus:border-gray-300" placeholder="Search Product" v-model="keyword">
-            <img src="~/assets/icons/icon-search.svg" alt="Search Icon" class="absolute top-4 right-9 bg-gray-100 py-3 px-0 lg:right-9 lg:top-0">
-          </div>
-          <ul class="flex items-center justify-center pt-4 lg:pt-0">
-            <li class="mx-6">
-              <NuxtLink to="/cart" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60 relative">
-                <ClientOnly>
-                  <span v-if="cartItems.length" class="bg-red-600 p-[2px] px-2 rounded-full text-xs font-bold text-white">{{ cartItems.length }}</span>
-                </ClientOnly>
-                <img src="~/assets/icons/icon-cart.svg" alt="Cart Icon" class="mr-1">
-                <p class="font-bold text-sm">Cart</p>
-              </NuxtLink>
-            </li>
-            <li class="mx-6">
-              <NuxtLink to="/profile" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60">
-                <img src="~/assets/icons/icon-user.svg" alt="User Icon" class="mr-1">
-                <p class="font-bold text-sm">Account</p>
-              </NuxtLink>
-            </li>
-          </ul>
-        </nav>
+        <transition>
+          <nav id="nav-menu" class="absolute py-4 w-full top-full bg-white border transition-all duration-500 ease-in-out lg:right-4 lg:static lg:flex lg:justify-end lg:border-none lg:top-0 lg:bg-transparent z-10" :class="[activeMenu ? 'right-0' : '-right-[130%]']">
+            <div class="px-4 pt-4 lg:w-full lg:pt-0 relative">
+              <input @keyup.enter="searchProduct" type="text" class="bg-gray-100 w-full py-3 px-8 rounded-full text-sm focus:outline-none focus:ring focus:ring-dark/10 focus:border-gray-300" placeholder="Search Product" v-model="keyword">
+              <img src="~/assets/icons/icon-search.svg" alt="Search Icon" class="absolute top-4 right-9 bg-gray-100 py-3 px-0 lg:right-9 lg:top-0">
+            </div>
+            <ul class="flex items-center justify-center pt-4 lg:pt-0">
+              <li class="mx-6">
+                <NuxtLink to="/cart" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60 relative">
+                  <ClientOnly>
+                    <span v-if="cartItems.length" class="bg-red-600 p-[2px] px-2 rounded-full text-xs font-bold text-white">{{ cartItems.length }}</span>
+                  </ClientOnly>
+                  <img src="~/assets/icons/icon-cart.svg" alt="Cart Icon" class="mr-1">
+                  <p class="font-bold text-sm">Cart</p>
+                </NuxtLink>
+              </li>
+              <li class="mx-6">
+                <NuxtLink to="/profile" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60">
+                  <img src="~/assets/icons/icon-user.svg" alt="User Icon" class="mr-1">
+                  <p class="font-bold text-sm">Account</p>
+                </NuxtLink>
+              </li>
+            </ul>
+          </nav>
+        </transition>
       </div>
     </div>
   </header>

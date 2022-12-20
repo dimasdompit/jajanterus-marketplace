@@ -12,16 +12,8 @@
       <p class="text-lg lg:text-xl font-medium text-primary">${{ discountPrice }}</p>
     </div>
     <p v-else class="text-lg lg:text-xl font-medium text-primary" :class="{'mt-11': !data.discountPercentage && data.discountPercentage === 0 }">${{ data.price }}</p>
-    <div class="flex items-end">
-      <ClientOnly placeholder="Loading...">
-        <star-rating
-          :rating="data.rating"
-          :show-rating="false"
-          :star-size="15"
-          :read-only="true"
-          :increment="0.01"
-        ></star-rating>
-      </ClientOnly>
+    <div class="flex items-center">
+      <StarRating :rating="data.rating" />
       <span class="text-xs text-gray-500">({{ data.rating }})</span>
     </div>
     <button v-if="isLogin" @click="addToCart" class="text-sm lg:text-base px-7 py-2 border border-slate-600 rounded-full mt-2 hover:bg-primary hover:text-white hover:border-primary transition duration-300 hover:shadow-md" type="button">Add to cart</button>

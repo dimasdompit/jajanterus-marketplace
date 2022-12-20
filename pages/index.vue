@@ -4,16 +4,18 @@
       <!-- Carousel Section Start -->
       <section>
         <SkeletonsFeaturedProduct v-if="featuredProductsLoading" />
-        <Carousel v-else :autoplay="3000" :wrap-around="true">
-          <Slide v-for="(product, index) in featuredProducts.products" :key="index">
-            <div class="overflow-hidden max-h-48 md:max-h-56 lg:max-h-72 rounded-lg w-full">
-              <img :src="product.thumbnail" :alt="product.title" class="w-full h-full object-cover object-center">
-            </div>
-          </Slide>
-          <template #addons>
-            <Pagination />
-          </template>
-        </Carousel>
+        <ClientOnly v-else>
+          <Carousel :autoplay="3000" :wrap-around="true">
+            <Slide v-for="(product, index) in featuredProducts?.products" :key="index">
+              <div class="overflow-hidden max-h-48 md:max-h-56 lg:max-h-72 rounded-lg w-full">
+                <img :src="product?.thumbnail" :alt="product?.title" class="w-full h-full object-cover object-center">
+              </div>
+            </Slide>
+            <template #addons>
+              <Pagination />
+            </template>
+          </Carousel>
+        </ClientOnly>
       </section>
       <!-- Carousel Section End -->
 
@@ -64,7 +66,7 @@
           <SkeletonsProduct v-for="items in 12" :key="items" />
         </div>
         <div v-else class="flex flex-wrap">
-          <ProductCard v-for="(product, index) in allProducts.products" :key="index" :data="product" @addToCart="addToCart(product)" />
+          <ProductCard v-for="(product, index) in allProducts?.products" :key="index" :data="product" @addToCart="addToCart(product)" />
         </div>
         <div class="flex justify-center items-center my-8 lg:my-10">
           <button @click="loadMoreProducts" class="font-medium text-sm lg:text-xl text-white bg-primary px-12 py-2 rounded-lg hover:bg-primary/90 transition duration-300">
@@ -117,7 +119,7 @@ const {
   topProductsLoading,
   allProductsLoading,
   loadMoreProducts,
-  moreProductsLoading
+  moreProductsLoading,
 } = useProducts();
 const { categories, categoriesLoading } = useCategories()
 const { addItem } = useCartsStore()

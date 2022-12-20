@@ -28,3 +28,20 @@ body {
 .hamburger-active > span:nth-child(3) {
   @apply -rotate-45;
 }
+
+.left-full {
+  left: -100%;
+}
+
+.carousel-item {
+  float: left;
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+}
+
+.carousel-item.active {
+  left: 0;
+}

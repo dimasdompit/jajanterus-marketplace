@@ -23,40 +23,34 @@
         <SkeletonsProductDetails v-if="productLoading" />
         <div v-else class="grid grid-cols-1 items-center md:grid-cols-2 md:gap-4 mt-4">
           <div class="w-full">
-            <Carousel id="gallery" :items-to-show="1" :wrap-around="false" v-model="currentSlide">
-              <Slide v-for="(image, index) in product.images" :key="index">
-                <img class="h-96 w-96 object-contain object-center" :src="image" :alt="product.title">
-              </Slide>
-            </Carousel>
+            <ClientOnly>
+              <Carousel id="gallery" :items-to-show="1" :wrap-around="false" v-model="currentSlide">
+                <Slide v-for="(image, index) in product.images" :key="index">
+                  <img class="h-96 w-96 object-contain object-center" :src="image" :alt="product.title">
+                </Slide>
+              </Carousel>
 
-            <Carousel
-              id="thumbnails"
-              :items-to-show="3"
-              :wrap-around="true"
-              v-model="currentSlide"
-              ref="carousel"
-            >
-              <Slide v-for="(image, index) in product.images" :key="index">
-                <div class="p-2 bg-gray-100 w-full h-32 lg:h-52" @click="slideTo(index + 1)">
-                  <img :src="image" :alt="product.title" class="h-full w-full object-cover object-center">
-                </div>
-              </Slide>
-            </Carousel>
+              <Carousel
+                id="thumbnails"
+                :items-to-show="3"
+                :wrap-around="true"
+                v-model="currentSlide"
+                ref="carousel"
+              >
+                <Slide v-for="(image, index) in product.images" :key="index">
+                  <div class="p-2 bg-gray-100 w-full h-32 lg:h-52" @click="slideTo(index + 1)">
+                    <img :src="image" :alt="product.title" class="h-full w-full object-cover object-center">
+                  </div>
+                </Slide>
+              </Carousel>
+            </ClientOnly>
           </div>
           <div class="w-full">
             <h1 class="text-xl md:text-2xl lg:text-4xl font-bold mt-2">{{ product.title }}</h1>
             <h2 class="text-sm text-primary md:text-md lg:text-lg font-semibold mb-2">{{ product.brand }}</h2>
             <p class="text-xs text-gray-500 mb-2">{{ product.description }}</p>
-            <div class="flex items-end">
-              <ClientOnly placeholder="Loading...">
-                <star-rating
-                  :rating="product.rating"
-                  :show-rating="false"
-                  :star-size="15"
-                  :read-only="true"
-                  :increment="0.01"
-                ></star-rating>
-              </ClientOnly>
+            <div class="flex items-center">
+              <StarRating :rating="product.rating" />
               <span class="text-xs text-gray-500">({{ product.rating }})</span>
             </div>
             <div class="flex items-center">

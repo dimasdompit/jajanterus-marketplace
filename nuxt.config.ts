@@ -44,9 +44,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: [
-    { src: "~/plugins/rating.js", mode: 'client' }
-  ],
   modules: [
     [
       "@pinia/nuxt", {
