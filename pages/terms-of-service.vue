@@ -2,6 +2,8 @@
   <div id="terms-of-service">
     <div class="container">
 
+      <Breadcrumbs :crumbs="crumbs" />
+
       <section class="my-8">
         <h1 class="text-2xl font-bold mb-2">Terms of Service</h1>
         <p class="text-sm text-gray-500 mb-8">Welcome to JajanTerus, a marketplace platform that allows users to buy and sell a wide range of items. By accessing or using our website, you agree to be bound by the following terms of service.</p>
@@ -71,4 +73,9 @@ useHead({
     { property: 'twitter:description', content: 'Welcome to JajanTerus, a marketplace platform that allows users to buy and sell a wide range of items. By accessing or using our website, you agree to be bound by the following terms of service.' },
   ]
 })
+
+const crumbs = ref([
+  {name: 'Home', link: '/'},
+  {name: 'Terms of Service', link: null}
+])
 </script>

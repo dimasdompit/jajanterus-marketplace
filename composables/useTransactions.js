@@ -5,7 +5,7 @@ import { useCartsStore } from '~/stores/carts';
 export default function useTransactions() {
   const router = useRouter();
   
-  const { setCoupon, payOder } = useTransactionStore();
+  const { setCoupon, payOder, orderId } = useTransactionStore();
   const { clearItems } = useCartsStore();
   const { $swal } = useNuxtApp();
   const { couponDiscount, inCart } = storeToRefs(useTransactionStore())
@@ -162,7 +162,7 @@ export default function useTransactions() {
           })
          }, 1500)
         setTimeout(() => { 
-          router.push('/');
+          router.push(`/profile/order/${orderId}`);
         }, 3000)
       }
   

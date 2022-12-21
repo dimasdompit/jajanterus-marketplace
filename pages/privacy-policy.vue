@@ -2,6 +2,8 @@
   <div id="privacy-policy">
     <div class="container">
 
+      <Breadcrumbs :crumbs="crumbs" />
+
       <section class="my-8">
         <div class="mb-4">
           <h1 class="text-2xl font-bold mb-1">Privacy Policy</h1>
@@ -97,4 +99,9 @@ useHead({
     { property: 'twitter:description', content: 'At JajanTerus, we are committed to protecting the privacy of our users. This privacy policy explains how we collect, use, and protect the personal information of our users.' },
   ]
 })
+
+const crumbs = ref([
+  {name: 'Home', link: '/'},
+  {name: 'Privacy Policy', link: null}
+])
 </script>

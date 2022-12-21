@@ -2,6 +2,8 @@
   <div id="profile">
     <div class="container">
 
+      <Breadcrumbs :crumbs="crumbs" />
+
       <section class="my-4">
         <div class="flex justify-center items-center mb-6 bg-primary py-2 rounded-lg">
           <button @click="activeTab = 1" type="button" class="w-full mx-2 lg:mx-2 text-sm lg:text-base uppercase py-1 px-6 rounded-md whitespace-nowrap" :class="[activeTab === 1 ? 'text-primary font-bold bg-white' : 'text-white']">Profile</button>
@@ -110,4 +112,8 @@ useHead({
 })
 
 const activeTab = ref(1);
+const crumbs = ref([
+  {name: 'Home', link: '/'},
+  {name: 'Profile', link: null}
+])
 </script>

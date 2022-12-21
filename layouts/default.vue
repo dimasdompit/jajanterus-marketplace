@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import 'vue3-carousel/dist/carousel.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { useAuthStore } from '~/stores/auth'
 

@@ -1,27 +1,16 @@
 <template>
   <div id="home">
+
     <div class="container">
       <!-- Carousel Section Start -->
       <section>
-        <SkeletonsFeaturedProduct v-if="featuredProductsLoading" />
-        <ClientOnly v-else>
-          <Carousel :autoplay="3000" :wrap-around="true">
-            <Slide v-for="(product, index) in featuredProducts?.products" :key="index">
-              <div class="overflow-hidden max-h-48 md:max-h-56 lg:max-h-72 rounded-lg w-full">
-                <img :src="product?.thumbnail" :alt="product?.title" class="w-full h-full object-cover object-center">
-              </div>
-            </Slide>
-            <template #addons>
-              <Pagination />
-            </template>
-          </Carousel>
-        </ClientOnly>
+        <SliderBanner :data="featuredProducts?.products" />
       </section>
       <!-- Carousel Section End -->
 
       <!-- Top Products Section Start -->
       <section class="my-4">
-        <h2 class="text-xl lg:text-3xl font-bold uppercase mb-2 lg:mb-4 mt-10">Top Products!</h2>
+        <h2 class="text-xl lg:text-3xl font-bold uppercase mb-2 lg:mb-4 mt-8">Top Products!</h2>
         <div class="overflow-auto whitespace-nowrap gap-3 lg:gap-0">
           <div v-if="topProductsLoading">
             <SkeletonsProduct v-for="items in 10" :key="items" />
@@ -103,7 +92,6 @@
 </template>
 
 <script setup>
-import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import { useCartsStore } from '~/stores/carts'
 
 useHead({

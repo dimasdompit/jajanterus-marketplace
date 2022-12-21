@@ -2,11 +2,11 @@
   <div id="profile">
     <div class="container">
 
+      <NuxtLink to="/profile" class="inline-flex items-center hover:opacity-70">
+        <img src="~/assets/icons/icon-arrow-left.svg" alt="Icon Arrow Left">
+        <span class="font-semibold text-sm">Back To Profile</span>
+      </NuxtLink>
       <section class="my-4">
-        <!-- <div class="flex justify-center items-center mb-6 border-b-2 pb-4">
-          <button type="button" class="mx-8 text-sm lg:text-lg uppercase">Profile</button>
-          <button type="button" class="mx-8 text-sm lg:text-lg uppercase">My Orders</button>
-        </div> -->
         <div class="flex justify-center">
           <div class="w-full h-full p-6 border border-gray-100 rounded-xl shadow mb-4 md:mr-4">
             <h1 class="text-xl font-bold text-center">Order Details</h1>
