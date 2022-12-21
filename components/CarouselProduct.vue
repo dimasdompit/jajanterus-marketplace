@@ -6,7 +6,7 @@
           <div
             v-for="(item, index) in data"
             :key="index"
-            class="w-full min-w-full max-w-full h-48 md:h-56 lg:h-72 z-10"
+            class="w-full min-w-full max-w-full h-48 md:h-56 lg:h-72 z-10 transition-all duration-300"
             :style="{ transform: `translateX(${-width * (currentSlide - 1)}px)` }"
           >
             <img :src="item" :alt="item" class="w-full h-full object-contain object-center">
@@ -18,7 +18,7 @@
       <div 
         v-for="(item, index) in data"
         :key="index"
-        class="p-2 w-1/3 inline-block cursor-pointer"
+        class="p-2 w-1/3 inline-block cursor-pointer transition-all duration-300"
         @click="currentSlide = index + 1"
       >
           <img :src="item" :alt="item" class="w-full h-24 lg:h-40 object-cover object-center">

@@ -6,7 +6,7 @@
           <NuxtLink
             v-for="(item, index) in data"
             :key="index"
-            class="block w-full min-w-full max-w-full h-48 md:h-56 lg:h-72 z-10"
+            class="block w-full min-w-full max-w-full h-48 md:h-56 lg:h-72 z-10 transition-all duration-300"
             :style="{ transform: `translateX(${-width * (currentSlide - 1)}px)` }"
             :to="`/products/${item.id}`"
           >
@@ -19,7 +19,7 @@
       <button
         v-for="(item, index) in data"
         :key="index"
-        class="h-2 lg:h-3 rounded-full"
+        class="h-2 lg:h-3 rounded-full transition-all duration-300"
         :class="{
           'bg-gray-300 w-2 lg:w-3': currentSlide !== index + 1,
           'bg-primary w-8 lg:w-12': currentSlide === index + 1
