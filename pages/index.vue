@@ -4,7 +4,8 @@
     <div class="container">
       <!-- Carousel Section Start -->
       <section>
-        <SliderBanner :data="featuredProducts?.products" />
+        <SkeletonsFeaturedProduct v-if="featuredProductsLoading" />
+        <SliderBanner v-else :data="featuredProducts?.products" />
       </section>
       <!-- Carousel Section End -->
 
