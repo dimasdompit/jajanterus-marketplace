@@ -18,6 +18,7 @@
     <div class="flex items-center justify-center gap-x-2 py-3 z-30">
       <button
         type="button"
+        name="button"
         v-for="(item, index) in data"
         :key="index"
         class="h-2 lg:h-3 rounded-full transition-all duration-300"
