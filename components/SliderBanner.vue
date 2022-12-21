@@ -16,12 +16,10 @@
       </div>
     </div>
     <div class="flex items-center justify-center gap-x-2 py-3 z-30">
-      <button
-        type="button"
-        name="slider-button"
+      <div
         v-for="(item, index) in data"
         :key="index"
-        class="h-2 lg:h-3 rounded-full transition-all duration-300"
+        class="h-2 lg:h-3 rounded-full transition-all duration-300 cursor-pointer"
         :class="{
           'bg-gray-300 w-2 lg:w-3': currentSlide !== index + 1,
           'bg-primary w-8 lg:w-12': currentSlide === index + 1
