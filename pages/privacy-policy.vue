@@ -95,6 +95,7 @@ useHead({
   meta: [
     { name: 'description', content: 'At JajanTerus, we are committed to protecting the privacy of our users. This privacy policy explains how we collect, use, and protect the personal information of our users.' },
     { property: 'og:url', content: `${config.public.frontendUrl}/privacy-policy` },
+    { property: 'og:title', content: 'Privacy Policy | JajanTerus' },
     { property: 'og:description', content: 'At JajanTerus, we are committed to protecting the privacy of our users. This privacy policy explains how we collect, use, and protect the personal information of our users.' },
     { property: 'twitter:description', content: 'At JajanTerus, we are committed to protecting the privacy of our users. This privacy policy explains how we collect, use, and protect the personal information of our users.' },
   ]

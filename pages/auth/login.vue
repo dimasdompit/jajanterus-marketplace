@@ -66,6 +66,7 @@ useHead({
   titleTemplate: 'Login | JajanTerus',
   meta: [
     { property: 'og:url', content: `${config.public.frontendUrl}/login` },
+    { property: 'og:title', content: 'Login | JajanTerus' },
   ]
 })
 </script>

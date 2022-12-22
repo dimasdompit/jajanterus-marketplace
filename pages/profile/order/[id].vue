@@ -76,6 +76,7 @@ useHead({
   titleTemplate: 'Order Details | JajanTerus',
   meta: [
     { property: 'og:url', content: `${config.public.frontendUrl}/profile/order/${id}` },
+    { property: 'og:title', content: 'Order Details | JajanTerus' },
   ]
 })
 

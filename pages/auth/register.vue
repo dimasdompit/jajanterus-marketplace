@@ -75,6 +75,7 @@ useHead({
   titleTemplate: 'Register | JajanTerus',
   meta: [
     { property: 'og:url', content: `${config.public.frontendUrl}/register` },
+    { property: 'og:title', content: 'Register | JajanTerus' },
   ]
 })
 </script>

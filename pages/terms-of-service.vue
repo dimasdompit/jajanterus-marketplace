@@ -69,6 +69,7 @@ useHead({
   meta: [
     { name: 'description', content: 'Welcome to JajanTerus, a marketplace platform that allows users to buy and sell a wide range of items. By accessing or using our website, you agree to be bound by the following terms of service.' },
     { property: 'og:url', content: `${config.public.frontendUrl}/terms-of-service` },
+    { property: 'og:title', content: 'Terms of Service | JajanTerus' },
     { property: 'og:description', content: 'Welcome to JajanTerus, a marketplace platform that allows users to buy and sell a wide range of items. By accessing or using our website, you agree to be bound by the following terms of service.' },
     { property: 'twitter:description', content: 'Welcome to JajanTerus, a marketplace platform that allows users to buy and sell a wide range of items. By accessing or using our website, you agree to be bound by the following terms of service.' },
   ]

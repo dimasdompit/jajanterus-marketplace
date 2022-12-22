@@ -6,6 +6,7 @@
         <Head>
           <Title>{{ category?.title }}</Title>
           <Meta property="og:url" :content="`${config.public.frontendUrl}/products/category/${category?.slug}`" />
+          <Meta property="og:title" :content="category?.title" />
         </Head>
       </ClientOnly>
 

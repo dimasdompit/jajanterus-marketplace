@@ -200,6 +200,7 @@ useHead({
   titleTemplate: 'Checkout | JajanTerus',
   meta: [
     { property: 'og:url', content: `${config.public.frontendUrl}/checkout` },
+    { property: 'og:title', content: 'Checkout | JajanTerus' },
   ]
 })
 

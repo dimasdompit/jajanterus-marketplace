@@ -108,6 +108,7 @@ useHead({
   titleTemplate: 'Profile | JajanTerus',
   meta: [
     { property: 'og:url', content: `${config.public.frontendUrl}/profile` },
+    { property: 'og:title', content: 'Profile | JajanTerus' },
   ]
 })
 

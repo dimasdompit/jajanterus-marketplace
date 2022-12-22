@@ -84,6 +84,7 @@ useHead({
   titleTemplate: 'Cart | JajanTerus',
   meta: [
     { property: 'og:url', content: `${config.public.frontendUrl}/cart` },
+    { property: 'og:title', content: 'Cart | JajanTerus' },
   ]
 })
 

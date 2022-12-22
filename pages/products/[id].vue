@@ -7,6 +7,7 @@
           <Title>{{ product?.title }}</Title>
           <Meta name="description" :content="product?.description" />
           <Meta property="og:url" :content="`${config.public.frontendUrl}/products/${product?.id}`" />
+          <Meta property="og:title" :content="product?.title" />
           <Meta property="og:description" :content="product?.description" />
           <Meta property="og:image" :content="product?.thumbnail" />
           <Meta property="og:image:secure_url" :content="product?.thumbnail" />
