@@ -85,7 +85,7 @@
           <div v-if="productCategoriesLoading">
             <SkeletonsProduct v-for="items in 10" :key="items" />
           </div>
-          <ProductCard v-else v-for="(product, index) in productCategories.products" :key="index" :data="product" />
+          <ProductCard v-else v-for="(product, index) in productCategories.products" :key="index" :data="product" @addToCart="addToCart(product, 1)" />
         </div>
       </section>
       <!-- Similar Products Section End -->
