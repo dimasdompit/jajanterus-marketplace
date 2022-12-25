@@ -88,7 +88,7 @@ export default function useTransactions() {
 
   const districtError = computed(() => {
     return validationInput(
-      address.value.address,
+      address.value.district,
       /^.+$/,
       'Please choose a district.'
     );
@@ -96,7 +96,7 @@ export default function useTransactions() {
 
   const subdistrictError = computed(() => {
     return validationInput(
-      address.value.address,
+      address.value.subdistrict,
       /^.+$/,
       'Please choose a subdistrict.'
     );
