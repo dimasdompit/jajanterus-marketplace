@@ -72,7 +72,7 @@ export default function useTransactions() {
 
   const provinceError = computed(() => {
     return validationInput(
-      address.value.address,
+      address.value.province,
       /^.+$/,
       'Please choose a province.'
     );
