@@ -18,7 +18,7 @@
               <h3 class="text-base lg:text-lg mb-4">Delivery Address</h3>
               <p class="text-xs lg:text-sm mb-1">{{ order?.address?.firstName }} {{ order?.address?.lastName }}</p>
               <p class="text-xs lg:text-sm text-gray-500 mb-1">{{ order?.address?.phone }}</p>
-              <p class="text-xs lg:text-sm text-gray-500">{{ order?.address?.address }}, {{ order?.address?.city }}, {{ order?.address?.zipcode }}</p>
+              <p class="text-xs lg:text-sm text-gray-500">{{ order?.address?.address }}, {{ order?.address?.subdistrict?.text }}, {{ order?.address?.district?.text }}, {{ order?.address?.city?.text }}, {{ order?.address?.province?.text }} {{ order?.address?.zipcode?.text }}</p>
             </div>
             <div class="mt-8">
               <div v-for="(product, index) in order?.productItems" :key="index" class="mb-4 flex border-b border-gray-300 pb-4">

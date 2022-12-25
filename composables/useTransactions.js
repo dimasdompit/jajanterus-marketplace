@@ -4,10 +4,10 @@ import { useCartsStore } from '~/stores/carts';
 
 export default function useTransactions() {
   const router = useRouter();
+  const { $swal } = useNuxtApp();
   
   const { setCoupon, payOder, orderId } = useTransactionStore();
   const { clearItems } = useCartsStore();
-  const { $swal } = useNuxtApp();
   const { couponDiscount, inCart } = storeToRefs(useTransactionStore())
 
   /**
@@ -22,8 +22,11 @@ export default function useTransactions() {
     firstName: '',
     lastName: '',
     address: '',
-    city: '',
-    zipcode: '',
+    province: null,
+    city: null,
+    district: null,
+    subdistrict: null,
+    zipcode: null,
     phone: '',
     email: ''
   });
@@ -31,7 +34,10 @@ export default function useTransactions() {
     firstName: null,
     lastName: null,
     address: null,
+    province: null,
     city: null,
+    district: null,
+    subdistrict: null,
     zipcode: null,
     phone: null,
     email: null
@@ -63,20 +69,44 @@ export default function useTransactions() {
       'Please enter a valid address. Addresses must contain a number followed by two words separated by a space.'
     );
   })
+
+  const provinceError = computed(() => {
+    return validationInput(
+      address.value.address,
+      /^.+$/,
+      'Please choose a province.'
+    );
+  })
   
   const cityError = computed(() => {
     return validationInput(
       address.value.city,
-      /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/,
-      'City names must contain only letters and spaces.'
+      /^.+$/,
+      'Please choose a city.'
+    );
+  })
+
+  const districtError = computed(() => {
+    return validationInput(
+      address.value.address,
+      /^.+$/,
+      'Please choose a district.'
+    );
+  })
+
+  const subdistrictError = computed(() => {
+    return validationInput(
+      address.value.address,
+      /^.+$/,
+      'Please choose a subdistrict.'
     );
   })
   
   const zipcodeError = computed(() => {
     return validationInput(
       address.value.zipcode,
-      /^\d{5}$/,
-      'Zip codes must be 5 digits long and contain only numbers.'
+      /^.+$/,
+      'Please choose a zipcode.'
     );
   })
   
@@ -130,7 +160,10 @@ export default function useTransactions() {
     if (!address.value.firstName) return addressErrors.value.firstName = firstNameError;
     if (!address.value.lastName) return addressErrors.value.lastName = lastNameError;
     if (!address.value.address) return addressErrors.value.address = addressError;
+    if (!address.value.province) return addressErrors.value.province = provinceError;
     if (!address.value.city) return addressErrors.value.city = cityError;
+    if (!address.value.district) return addressErrors.value.district = districtError;
+    if (!address.value.subdistrict) return addressErrors.value.subdistrict = subdistrictError;
     if (!address.value.zipcode) return addressErrors.value.zipcode = zipcodeError;
     if (!address.value.phone) return addressErrors.value.phone = phoneError;
     if (!address.value.email) return addressErrors.value.email = emailError;
@@ -151,6 +184,12 @@ export default function useTransactions() {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
+        address.value.province = JSON.parse(address.value.province)
+        address.value.city = JSON.parse(address.value.city)
+        address.value.district = JSON.parse(address.value.district)
+        address.value.subdistrict = JSON.parse(address.value.subdistrict)
+        address.value.zipcode = JSON.parse(address.value.zipcode)
+
         payOder(address.value, payment.value);
         if (inCart.value) clearItems();
         setTimeout(() => { 

@@ -39,6 +39,7 @@ export default defineNuxtConfig({
       cryptoSecretKey: process.env.NUXT_CRYPTO_SECRET_KEY,
       apiUrl: process.env.NUXT_API_URL,
       frontendUrl: process.env.NUXT_FRONTEND_URL,
+      apiAddressProvider: process.env.NUXT_ADDRESS_PROVIDER_API,
     }
   },
   css: ['~/assets/css/main.css'],

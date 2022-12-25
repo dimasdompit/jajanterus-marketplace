@@ -24,9 +24,9 @@
         <div v-else class="flex flex-wrap">
           <ProductCard v-for="(product, index) in productCategories.products" :key="index" :data="product" @addToCart="addToCart(product)" />
         </div>
-        <div class="flex justify-center items-center my-8 lg:my-10">
+        <!-- <div class="flex justify-center items-center my-8 lg:my-10">
           <button class="font-medium text-sm lg:text-xl text-white bg-primary px-12 py-2 rounded-lg hover:bg-primary/90 transition duration-300">Load More</button>
-        </div>
+        </div> -->
       </section>
       <!-- Product Categories Section End -->
 
