@@ -12,7 +12,7 @@
           <SkeletonsProduct v-for="items in 12" :key="items" />
         </div>
         <div v-else class="flex flex-wrap">
-          <div v-if="searchProductResult.products?.length">
+          <div v-if="searchProductResult.products?.length" class="w-full">
             <ProductCard v-for="(product, index) in searchProductResult.products" :key="index" :data="product" @addToCart="addToCart(product)" />
           </div>
           <div v-else class="mt-8 mx-auto md:w-1/2">
