@@ -18,7 +18,7 @@
               <h1 class="text-sm lg:text-base font-bold text-primary pt-8">Join our marketplace community</h1>
               <p class="pb-8 pt-1 text-xs lg:text-sm text-gray-500 text-center">Create an account to buy and connect. <br> Start exploring now!</p>
               <div class="px-6 w-full">
-                <form>
+                <form @keyup.enter="submitRegister">
                   <div class="w-full mb-4">
                     <label for="name" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Full Name</label>
                     <input type="text" id="name" name="name" class="text-xs lg:text-sm w-full p-2 border border-gray-200 rounded-md focus:outline-none focus:border-2 focus:border-gray-300" placeholder="Enter name" autocomplete="off" v-model="data.name">

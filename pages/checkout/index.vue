@@ -176,13 +176,14 @@
 
                 <div class="mt-4 p-4 bg-orange-100 w-full rounded-lg shadow">
                   <p class="text-sm font-semibold text-orange-600 text-center mb-2 uppercase">Please read this: </p>
-                  <p class="text-xs text-orange-600 text-center">Please note that any personal information you enter on this form, including your name, address, and payment details, will not be stored to database.
-                    <br>
-                    <br>
+                  <p class="text-xs text-orange-600 text-center">
                     To ensure the safety of your personal information, I recommend that you use dummy information when submitting this form.
                     <br>
                     <br>
-                    Your payment will still be processed successfully using dummy information, and your real personal information will not be at risk. This will help protect your sensitive information from potential security threats.
+                    Your payment will still be processed successfully using dummy information, and your real personal information will not be at risk.
+                    <br>
+                    <br>
+                    This will help protect your sensitive information from potential security threats.
                   </p>
                 </div>
               </div>

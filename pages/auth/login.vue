@@ -15,7 +15,7 @@
               <h1 class="text-sm lg:text-base font-bold pt-8 text-primary">Welcome Back!</h1>
               <p class="pb-8 pt-1 text-xs lg:text-sm text-gray-500">Login to shop.</p>
               <div class="px-6 w-full">
-                <form>
+                <form @keyup.enter="submitLogin">
                   <div class="w-full mb-4">
                     <label for="email" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Email</label>
                     <input type="email" id="email" name="email" class="text-xs lg:text-sm w-full p-2 border border-gray-200 rounded-md focus:outline-none focus:border-2 focus:border-gray-300" placeholder="Enter email" autocomplete="off" v-model="data.email">
@@ -60,6 +60,10 @@ definePageMeta({
 const config = useRuntimeConfig();
 const { isLoadingAuth } = storeToRefs(useAuthStore());
 const { submitLogin, data, dataErrors } = useAuth();
+
+const submit = () => {
+  console.log('kontil')
+}
 
 useHead({
   title: 'Login',

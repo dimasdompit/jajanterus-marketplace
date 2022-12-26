@@ -6,11 +6,13 @@ export default function useTerms() {
       if (!localStorage.getItem("agree-tnc")) {
         $swal.fire({
           title: `<strong class="text-lg text-primary uppercase font-bold">*Disclaimer*</strong>`,
-          html: `<p class="text-sm text-gray-600">Please note that any personal information, payment details, and logistics information entered or displayed on this website is for demonstration purposes only and is not stored to database. This website is for educational and testing purposes only.</p>
+          html: `<p class="text-sm text-gray-600">The products, payments, and logistics displayed or entered on this website are for educational purposes only and should not be relied upon as real or accurate.</p>
           <br/>
-          <p class="text-sm text-gray-600">If you wish to clear any data that you have entered, you can do so by clearing your browser storage.</p>
+          <p class="text-sm text-gray-600">This website is not intended for real transactions or the exchange of any real goods or services.</p>
           <br/>
-          <p class="text-sm text-gray-600">Please <strong class="font-bold">DO NOT</strong> enter any real personal or financial information on this website. I am not responsible for any loss or damage resulting from the use of this website.</p>`,
+          <p class="text-sm text-gray-600">Please <strong class="font-bold">DO NOT</strong> enter any real payment information on this website for your own safety and protection.</p>
+          <br/>
+          <p class="text-sm text-gray-600">If you wish to clear any data that you have entered or stored on this website, you can do so by clearing your browser storage.</p>`,
           allowOutsideClick: false,
           confirmButtonColor: '#059669',
           confirmButtonText: 'AGREE'

@@ -60,7 +60,7 @@
                     {{ order.orderId }}
                   </th>
                   <td class="py-4 px-6">
-                    {{ `${order.address.address}, ${order.address.city} ${order.address.zipcode}` }}
+                    {{ order.address?.address }}, {{ order.address?.subdistrict?.text }}, {{ order.address?.district?.text }}, {{ order.address?.city?.text }}, {{ order.address?.province?.text }} {{ order.address?.zipcode?.text }}
                   </td>
                   <td class="py-4 px-6">
                     {{ order.orderDate }}
