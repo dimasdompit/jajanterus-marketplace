@@ -1,8 +1,8 @@
 <template>
-  <div v-if="data !== undefined" class="p-2 w-1/2 md:w-1/4 inline-block">
-    <NuxtLink :to="`/products/${data.id}`" class="transition duration-300 hover:font-semibold">
+  <div v-if="data !== undefined" class="p-2 w-1/2 md:w-1/4 inline-block transition duration-300 hover:opacity-90">
+    <NuxtLink :to="`/products/${data.id}`" class="block">
     <div class="aspect-square">
-      <img :src="data.thumbnail" alt="Product" class="h-full w-full object-cover object-center rounded-lg">
+      <img :src="data.thumbnail" alt="Product" class="h-full w-full object-cover object-center rounded-lg transition duration-300">
     </div>
       <h4 class="text-sm lg:text-lg mt-2 whitespace-normal">{{ limitWord(data.title, 30, 30) }}</h4>
     </NuxtLink>
