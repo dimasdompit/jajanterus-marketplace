@@ -10,7 +10,7 @@ export default function useCategories() {
     setTimeout(() => { 
       categories.value = categoriesData.length ? categoriesData : [];
       categoriesLoading.value = false;
-    }, 1500)
+    }, 500)
   }
 
   const getCategory = (slug) => {
@@ -21,7 +21,7 @@ export default function useCategories() {
 
       category.value = filtered;
       categoriesLoading.value = false;
-    }, 1500)
+    }, 500)
   }
 
   onMounted(() => {

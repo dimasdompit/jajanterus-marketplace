@@ -24,16 +24,16 @@
             </div>
             <ul class="flex items-center justify-center pt-4 lg:pt-0">
               <li class="mx-6">
-                <NuxtLink to="/cart" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60 relative">
+                <NuxtLink :to="isLogin ? '/cart' : '/auth/login'" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60 relative">
                   <ClientOnly>
-                    <span v-if="cartItems.length" class="bg-red-600 p-[2px] px-2 rounded-full text-xs font-bold text-white">{{ cartItems.length }}</span>
+                    <span v-if="cartItems.length && isLogin" class="bg-red-600 p-[2px] px-2 rounded-full text-xs font-bold text-white">{{ cartItems.length }}</span>
                   </ClientOnly>
                   <img src="~/assets/icons/icon-cart.svg" alt="Cart Icon" class="mr-1">
                   <p class="font-bold text-sm">Cart</p>
                 </NuxtLink>
               </li>
               <li class="mx-6">
-                <NuxtLink to="/profile" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60">
+                <NuxtLink :to="isLogin ? '/profile' : '/auth/login'" class="flex items-center cursor-pointer transition duration-300 hover:opacity-60">
                   <img src="~/assets/icons/icon-user.svg" alt="User Icon" class="mr-1">
                   <p class="font-bold text-sm">Account</p>
                 </NuxtLink>
@@ -48,8 +48,10 @@
 
 <script setup>
   import { useCartsStore } from '~/stores/carts'
+  import { useAuthStore } from '~/stores/auth';
   
   const cartStore = useCartsStore()
+  const { isLogin } = useAuthStore()
 
   let activeMenu = ref(false);
   const keyword = ref('');

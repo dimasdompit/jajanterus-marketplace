@@ -56,7 +56,7 @@ onMounted(() => {
 
   setTimeout(() => { 
     crumbs.value.push({ name: category ? category.value.title : '', link: null });
-  }, 1500)
+  }, 500)
 })
 
 const addToCart = product => {

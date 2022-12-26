@@ -124,13 +124,13 @@ const crumbs = ref([
   { name: 'Product', link: null },
 ]);
 
-onMounted(() => {
-  getProductDetail(productId);
+onMounted(async () => {
+  await getProductDetail(productId);
 
-  setTimeout(() => { 
-    crumbs.value.push({ name: product ? product?.value?.title : 'oke', link: null });
-    getProductCategories(product?.value?.category)
-  }, 2000)
+  // setTimeout(async () => { 
+  crumbs.value.push({ name: product ? product?.value?.title : 'oke', link: null });
+  await getProductCategories(product?.value?.category)
+  // }, 1000)
 })
 
 /* ========== Computed ========== */
