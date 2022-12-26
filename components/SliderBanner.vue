@@ -1,16 +1,16 @@
 <template>
   <div v-if="data?.length" ref="wrapper">
     <div class="flex items-center gap-x-8 relative w-full">
-      <div class="w-full rounded-lg overflow-hidden">
+      <div class="w-full rounded-md md:rounded-lg overflow-hidden">
         <div class="flex items-center">
           <NuxtLink
             v-for="(item, index) in data"
             :key="index"
-            class="block w-full min-w-full max-w-full h-48 md:h-56 lg:h-72 z-10 transition-all duration-300"
+            class="block w-full min-w-full max-w-full h-full z-10 transition-all duration-300"
             :style="{ transform: `translateX(${-width * (currentSlide - 1)}px)` }"
             :to="`/products/${item.id}`"
           >
-            <img :src="item.thumbnail" :alt="item.title" class="w-full h-full object-cover object-top">
+            <img :src="loadBanner(item.thumbnail)" :alt="item.title" class="w-full h-full object-cover object-center">
           </NuxtLink>
         </div>
       </div>

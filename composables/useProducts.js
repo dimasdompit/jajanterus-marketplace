@@ -1,3 +1,5 @@
+import { featuredData } from '~/assets/json/featuredProducts.json'
+
 export default function useProducts() {
   const { $apiFetch } = useNuxtApp()
 
@@ -17,17 +19,26 @@ export default function useProducts() {
   const moreProductsLoading = ref(false);
 
 
-  const getFeaturedProducts = async () => {
-    featuredProductsLoading.value = true;
-    try {
-      const response = await $apiFetch('/products?limit=5')
+  // const getFeaturedProducts = async () => {
+  //   featuredProductsLoading.value = true;
+  //   try {
+  //     const response = await $apiFetch('/products?limit=5')
 
-      featuredProducts.value = response
-      featuredProductsLoading.value = false
-    } catch (error) {
-      console.log(error)
-      featuredProductsLoading.value = false
-    }
+  //     featuredProducts.value = response
+  //     console.log(response.products)
+  //     featuredProductsLoading.value = false
+  //   } catch (error) {
+  //     console.log(error)
+  //     featuredProductsLoading.value = false
+  //   }
+  // }
+
+  const getFeaturedProducts = () => {
+    featuredProductsLoading.value = true;
+    setTimeout(() => { 
+      featuredProducts.value = featuredData !== undefined ? featuredData : [];
+      featuredProductsLoading.value = false;
+    }, 500)
   }
 
   const getTopProducts = async () => {

@@ -55,7 +55,6 @@ export default function useAddress() {
   }
 
   const changeProvince = (event) => {
-    console.log(address.value)
     if (event.target.value != 'Choose a province' && provinces.value.length) {
       const data = JSON.parse(event.target.value);
       address.value.province = data;
@@ -71,7 +70,6 @@ export default function useAddress() {
   }
 
   const changeCity = (event) => {
-    console.log(address.value)
     if (event.target.value != 'Choose a city' && cities.value.length) {
       const data = JSON.parse(event.target.value);
       address.value.city = data;
@@ -86,7 +84,6 @@ export default function useAddress() {
   }
 
   const changeDistrict = (event) => {
-    console.log(address.value)
     if (event.target.value != 'Choose a district' && districts.value.length) {
       const data = JSON.parse(event.target.value);
       address.value.district = data;
@@ -100,7 +97,6 @@ export default function useAddress() {
   }
 
   const changeSubdistrict = (event) => {
-    console.log(address.value)
     if (event.target.value != 'Choose a subdistrict' && subdistricts.value.length) {
       const data = JSON.parse(event.target.value);
       address.value.subdistrict = data;
