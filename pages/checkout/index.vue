@@ -50,7 +50,7 @@
                     </div>
                     <div class="my-2 w-full">
                       <label for="province" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Province</label>
-                      <select id="province" class="text-xs lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeProvince" v-model="address.province">
+                      <select id="province" class="text-xs lg:text-sm w-full p-2 bg-white border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeProvince" v-model="address.province">
                         <option selected :value="null">Choose a province</option>
                         <option v-for="(province, index) in provinces" :key="index" :value="JSON.stringify(province)">{{ province.text }}</option>
                       </select>
@@ -59,7 +59,7 @@
                     <div class="flex flex-col md:flex-row gap-2">
                       <div class="my-2 w-full">
                           <label for="city" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">City/Town</label>
-                          <select :disabled="!cities.length" id="city" class="text-xs disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeCity" v-model="address.city">
+                          <select :disabled="!cities.length" id="city" class="text-xs bg-white disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeCity" v-model="address.city">
                             <option selected :value="null">Choose a city</option>
                             <option v-for="(city, index) in cities" :key="index" :value="JSON.stringify(city)">{{ city.text }}</option>
                           </select>
@@ -67,7 +67,7 @@
                       </div>
                       <div class="my-2 w-full">
                           <label for="district" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">District</label>
-                          <select :disabled="!districts.length" id="district" class="text-xs disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeDistrict" v-model="address.district">
+                          <select :disabled="!districts.length" id="district" class="text-xs bg-white disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeDistrict" v-model="address.district">
                             <option selected :value="null">Choose a district</option>
                             <option v-for="(district, index) in districts" :key="index" :value="JSON.stringify(district)">{{ district.text }}</option>
                           </select>
@@ -77,15 +77,15 @@
                     <div class="flex flex-col md:flex-row gap-2">
                       <div class="my-2 w-full">
                           <label for="subdistrict" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Subdistrict</label>
-                          <select :disabled="!subdistricts.length" id="subdistrict" class="text-xs disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeSubdistrict" v-model="address.subdistrict">
+                          <select :disabled="!subdistricts.length" id="subdistrict" class="text-xs bg-white disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" @change="changeSubdistrict" v-model="address.subdistrict">
                             <option selected :value="null">Choose a subdistrict</option>
                             <option v-for="(subdistrict, index) in subdistricts" :key="index" :value="JSON.stringify(subdistrict)">{{ subdistrict.text }}</option>
                           </select>
                           <p v-if="addressErrors.subdistrict" class="text-xs text-red-600 mt-2">{{ addressErrors.subdistrict }}</p>
                       </div>
                       <div class="my-2 w-full">
-                          <label for="zipcode" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Zipcode</label>
-                          <select :disabled="!zipcodes.length" id="zipcode" class="text-xs disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" v-model="address.zipcode">
+                          <label for="zipcode" class="text-xs lg:text-sm font-semibold">Zipcode</label>
+                          <select :disabled="!zipcodes.length" id="zipcode" class="text-xs bg-white disabled:bg-gray-300 lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" v-model="address.zipcode">
                             <option selected :value="null">Choose a zipcode</option>
                             <option v-for="(zipcode, index) in zipcodes" :key="index" :value="JSON.stringify(zipcode)">{{ zipcode.text }}</option>
                           </select>
@@ -97,11 +97,6 @@
                           <label for="phone" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Phone</label>
                           <input type="tel" id="phone" name="phone" class="text-xs lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" placeholder="Enter phone number" autocomplete="off" v-model="address.phone">
                           <p v-if="addressErrors.phone" class="text-xs text-red-600 mt-2">{{ addressErrors.phone }}</p>
-                      </div>
-                      <div class="my-2 w-full">
-                          <label for="email" class="text-xs lg:text-sm font-semibold after:content-['*'] after:text-red-600">Email</label>
-                          <input type="email" id="email" name="email" class="text-xs lg:text-sm w-full p-2 border border-gray-200 rounded-sm focus:outline-none focus:border-2 focus:border-gray-300" placeholder="Enter email" autocomplete="off" v-model="address.email">
-                          <p v-if="addressErrors.email" class="text-xs text-red-600 mt-2">{{ addressErrors.email }}</p>
                       </div>
                     </div>
                   </form>

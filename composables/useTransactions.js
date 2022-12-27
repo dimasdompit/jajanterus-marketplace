@@ -28,7 +28,6 @@ export default function useTransactions() {
     subdistrict: null,
     zipcode: null,
     phone: '',
-    email: ''
   });
   const addressErrors = ref({
     firstName: null,
@@ -38,9 +37,7 @@ export default function useTransactions() {
     city: null,
     district: null,
     subdistrict: null,
-    zipcode: null,
     phone: null,
-    email: null
   })
 
   /**
@@ -102,27 +99,11 @@ export default function useTransactions() {
     );
   })
   
-  const zipcodeError = computed(() => {
-    return validationInput(
-      address.value.zipcode,
-      /^.+$/,
-      'Please choose a zipcode.'
-    );
-  })
-  
   const phoneError = computed(() => {
     return validationInput(
       address.value.phone,
       /^(\+62|62)?[\s-]?0?8[1-9]{1}\d{1}[\s-]?\d{4}[\s-]?\d{2,5}$/,
       'Please enter a valid phone number.'
-    );
-  })
-  
-  const emailError = computed(() => {
-    return validationInput(
-      address.value.email,
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-      'Please enter a valid email address.'
     );
   })
 
@@ -164,9 +145,7 @@ export default function useTransactions() {
     if (!address.value.city) return addressErrors.value.city = cityError;
     if (!address.value.district) return addressErrors.value.district = districtError;
     if (!address.value.subdistrict) return addressErrors.value.subdistrict = subdistrictError;
-    if (!address.value.zipcode) return addressErrors.value.zipcode = zipcodeError;
     if (!address.value.phone) return addressErrors.value.phone = phoneError;
-    if (!address.value.email) return addressErrors.value.email = emailError;
   
     if (!payment.value.length) {
       paymentError.value = 'Please choose a payment!';
