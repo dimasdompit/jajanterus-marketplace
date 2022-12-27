@@ -39,8 +39,8 @@ const { searchProductResult, searchProductResultLoading, searchProducts } = useP
 const { addItem } = useCartsStore();
 const { $swal } = useNuxtApp()
 
-onMounted(() => {
-  searchProducts(keyword);
+onMounted(async () => {
+  await searchProducts(keyword);
 })
 
 const addToCart = product => {
