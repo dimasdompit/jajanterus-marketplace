@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="w-full h-screen order-2 hidden md:block">
-          <img src="~/assets/img/image-login.jpg" alt="Image" class="w-full h-full object-cover object-center">
+          <img src="~/assets/img/image-login.webp" alt="Image" class="w-full h-full object-cover object-center">
         </div>
       </div>
     </div>

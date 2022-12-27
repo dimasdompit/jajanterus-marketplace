@@ -3,7 +3,7 @@
     <div class="">
       <div class="flex flex-wrap md:flex-nowrap">
         <div class="w-full h-screen hidden md:block">
-          <img src="~/assets/img/image-register.jpg" alt="Image" class="w-full h-full object-cover object-center">
+          <img src="~/assets/img/image-register.webp" alt="Image" class="w-full h-full object-cover object-center">
         </div>
         <div class="w-full h-screen flex flex-col items-center justify-center">
           <div class="w-full md:px-4 lg:px-40">
